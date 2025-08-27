@@ -1,4 +1,33 @@
-# Lab 1: Basic Agent with AWS Bedrock
+---
+layout: lab
+title: "Lab 1: Foundation Agent with AWS Bedrock"
+difficulty: Beginner
+duration: "30-45 minutes"
+objectives:
+  - "Create your first AI agent using AWS Bedrock foundation models"
+  - "Deploy serverless agent infrastructure with Lambda and API Gateway"
+  - "Implement basic prompt engineering and response handling"
+  - "Test and monitor agent performance in production"
+prerequisites:
+  - "AWS CLI configured with appropriate permissions"
+  - "Python 3.9+ installed locally"
+  - "Basic understanding of serverless functions"
+  - "AWS Bedrock model access approved"
+next_lab: "/aws/labs/lab2-stateful-agent"
+troubleshooting: |
+  **Bedrock Access Denied**: Ensure you've requested and received model access in the AWS Console under Bedrock → Model Access
+  
+  **Lambda Timeout**: Increase timeout in CDK configuration or optimize request/response handling
+  
+  **API Gateway CORS Errors**: Verify CORS configuration matches your client requirements
+additional_resources:
+  - title: "AWS Bedrock User Guide"
+    url: "https://docs.aws.amazon.com/bedrock/"
+  - title: "Lambda Best Practices"
+    url: "https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html"
+---
+
+# Lab 1: Foundation Agent with AWS Bedrock
 
 ## Objective
 Create your first autonomous agent using AWS Bedrock and Lambda that can understand requests, reason about them, and provide intelligent responses.

@@ -1,0 +1,220 @@
+---
+layout: default
+---
+
+<article class="lab-content">
+  <header class="lab-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.difficulty %}
+      <span class="difficulty-badge difficulty-{{ page.difficulty | downcase }}">
+        {{ page.difficulty | capitalize }}
+      </span>
+    {% endif %}
+    {% if page.duration %}
+      <div class="duration">⏱️ Duration: {{ page.duration }}</div>
+    {% endif %}
+  </header>
+
+  {% if page.objectives %}
+  <div class="objectives">
+    <h2>🎯 Learning Objectives</h2>
+    <ul>
+      {% for objective in page.objectives %}
+        <li>{{ objective }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if page.prerequisites %}
+  <div class="prerequisites">
+    <h3>📋 Prerequisites</h3>
+    <ul>
+      {% for prereq in page.prerequisites %}
+        <li>{{ prereq }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <div class="lab-navigation">
+    <div class="nav-links">
+      {% if page.previous_lab %}
+        <a href="{{ page.previous_lab | relative_url }}" class="nav-link prev">
+          ← Previous Lab
+        </a>
+      {% endif %}
+      {% if page.next_lab %}
+        <a href="{{ page.next_lab | relative_url }}" class="nav-link next">
+          Next Lab →
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="lab-content-body">
+    {{ content }}
+  </div>
+
+  {% if page.troubleshooting %}
+  <div class="troubleshooting">
+    <h2>🔧 Troubleshooting</h2>
+    {{ page.troubleshooting | markdownify }}
+  </div>
+  {% endif %}
+
+  {% if page.additional_resources %}
+  <div class="additional-resources">
+    <h2>📚 Additional Resources</h2>
+    <ul>
+      {% for resource in page.additional_resources %}
+        <li><a href="{{ resource.url }}" target="_blank">{{ resource.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <div class="lab-navigation bottom">
+    <div class="nav-links">
+      {% if page.previous_lab %}
+        <a href="{{ page.previous_lab | relative_url }}" class="nav-link prev">
+          ← Previous Lab
+        </a>
+      {% endif %}
+      {% if page.next_lab %}
+        <a href="{{ page.next_lab | relative_url }}" class="nav-link next">
+          Next Lab →
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</article>
+
+<style>
+.lab-header {
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.lab-header h1 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.objectives {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #28a745;
+  margin: 2rem 0;
+}
+
+.objectives h2 {
+  margin-top: 0;
+  color: #28a745;
+}
+
+.lab-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.lab-navigation.bottom {
+  margin-top: 3rem;
+  border-top: 2px solid #e9ecef;
+  border-bottom: none;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-link {
+  padding: 0.75rem 1.5rem;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background: #0056b3;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link.prev {
+  margin-right: auto;
+}
+
+.nav-link.next {
+  margin-left: auto;
+}
+
+.lab-content-body {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.lab-content-body h2 {
+  color: #2c3e50;
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.lab-content-body h3 {
+  color: #495057;
+  margin-top: 2rem;
+}
+
+.lab-content-body pre {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.lab-content-body code {
+  background: #f8f9fa;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.troubleshooting {
+  background: #fff3cd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #ffc107;
+  margin: 2rem 0;
+}
+
+.troubleshooting h2 {
+  margin-top: 0;
+  color: #856404;
+}
+
+.additional-resources {
+  background: #e7f3ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+  margin: 2rem 0;
+}
+
+.additional-resources h2 {
+  margin-top: 0;
+  color: #007bff;
+}
+</style>

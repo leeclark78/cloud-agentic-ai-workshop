@@ -1,4 +1,10 @@
-# Workshop Prerequisites
+---
+layout: default
+title: Workshop Prerequisites & Setup Guide
+description: Complete setup guide for cloud accounts, development environment, and dependencies
+---
+
+# 🛠️ Workshop Prerequisites & Setup Guide
 
 ## Overview
 

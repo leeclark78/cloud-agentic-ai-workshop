@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+{%- include head.html -%}
+
+<body>
+
+  {%- include header.html -%}
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      <div class="workshop-nav">
+        <div class="cloud-providers">
+          <a href="{{ '/aws/' | relative_url }}" class="provider-link aws">
+            <img src="{{ '/assets/aws-logo.svg' | relative_url }}" alt="AWS" />
+            <span>AWS Labs</span>
+          </a>
+          <a href="{{ '/azure/' | relative_url }}" class="provider-link azure">
+            <img src="{{ '/assets/azure-logo.svg' | relative_url }}" alt="Azure" />
+            <span>Azure Labs</span>
+          </a>
+          <a href="{{ '/gcp/' | relative_url }}" class="provider-link gcp">
+            <img src="{{ '/assets/gcp-logo.svg' | relative_url }}" alt="GCP" />
+            <span>GCP Labs</span>
+          </a>
+        </div>
+      </div>
+      {{ content }}
+    </div>
+  </main>
+
+  {%- include footer.html -%}
+
+  <style>
+    .workshop-nav {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 2rem;
+      margin: -2rem -2rem 2rem -2rem;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .cloud-providers {
+      display: flex;
+      justify-content: space-around;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .provider-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #333;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-width: 150px;
+    }
+
+    .provider-link:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+      text-decoration: none;
+      color: #333;
+    }
+
+    .provider-link img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+
+    .provider-link span {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .lab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .lab-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 1.5rem;
+      background: #fafafa;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .lab-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .lab-card h3 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+
+    .difficulty-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .difficulty-beginner { background: #d4edda; color: #155724; }
+    .difficulty-intermediate { background: #fff3cd; color: #856404; }
+    .difficulty-advanced { background: #f8d7da; color: #721c24; }
+
+    .duration {
+      color: #6c757d;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .prerequisites {
+      background: #e7f3ff;
+      border-left: 4px solid #007bff;
+      padding: 1rem;
+      margin: 2rem 0;
+    }
+
+    .warning {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 1rem;
+      margin: 2rem 0;
+    }
+
+    .success {
+      background: #d1ecf1;
+      border-left: 4px solid #17a2b8;
+      padding: 1rem;
+      margin: 2rem 0;
+    }
+  </style>
+
+</body>
+
+</html>

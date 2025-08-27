@@ -1,0 +1,66 @@
+title: Cloud Agentic AI Workshop
+description: A comprehensive hands-on workshop for building cloud-native AI agents across AWS, Azure, and GCP
+baseurl: "/cloud-agentic-ai-workshop"
+url: "https://leeclark78.github.io"
+
+# Theme
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Navigation
+header_pages:
+  - index.md
+  - prerequisites.md
+  - aws/index.md
+  - azure/index.md
+  - gcp/index.md
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Collections
+collections:
+  aws_labs:
+    output: true
+    permalink: /aws/labs/:name/
+  azure_labs:
+    output: true
+    permalink: /azure/labs/:name/
+  gcp_labs:
+    output: true
+    permalink: /gcp/labs/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "aws_labs"
+    values:
+      layout: "lab"
+  - scope:
+      path: ""
+      type: "azure_labs"
+    values:
+      layout: "lab"
+  - scope:
+      path: ""
+      type: "gcp_labs"
+    values:
+      layout: "lab"
+
+# SEO
+author: Lee Clark
+social:
+  github: leeclark78
